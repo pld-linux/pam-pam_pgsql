@@ -1,9 +1,10 @@
-# $Revision: 1.1 $Date: 2003-11-25 13:40:21 $
+# $Revision: 1.2 $Date: 2003-11-25 14:41:20 $
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
 Name:		pam-pam_pgsql
 Version:	0.9.3
 Release:	1
+Epoch:		0
 License:	GPL
 Group:		Base
 Source0:	http://dl.sourceforge.net/sysauth-pgsql/pam-pgsql-%{version}.tar.gz

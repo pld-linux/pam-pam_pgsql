@@ -1,15 +1,16 @@
-# $Revision: 1.5 $Date: 2004-02-19 10:25:55 $
+# $Revision: 1.6 $Date: 2004-06-15 10:28:59 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
 Name:		pam-%{modulename}
 Version:	0.9.3
-Release:	2
+Release:	2.1
 Epoch:		0
 License:	GPL
 Group:		Base
 Source0:	http://dl.sourceforge.net/sysauth-pgsql/pam-pgsql-%{version}.tar.gz
 # Source0-md5:	6d91662f167c87bf64dd24753181e9e3
+Patch0:		%{name}-include.patch
 URL:		http://sysauth-pgsql.sourceforge.net/
 BuildRequires:	pam-devel
 BuildRequires:	postgresql-devel
@@ -27,6 +28,7 @@ PAM PgSQL jest modu³em PAM u¿ywaj±cym bazy PostgreSQL.
 
 %prep
 %setup -q -n pam-pgsql-%{version}
+%patch0 -p1
 sed -e 's@#include <postgresql/libpq-fe.h>@#include <libpq-fe.h>@' \
 	src/pam_pgsql.h > pam_pgsql.h.tmp
 mv -f pam_pgsql.h.tmp src/pam_pgsql.h

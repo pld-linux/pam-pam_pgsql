@@ -1,10 +1,10 @@
-# $Revision: 1.4 $Date: 2003-11-28 09:28:08 $
+# $Revision: 1.5 $Date: 2004-02-19 10:25:55 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
 Name:		pam-%{modulename}
 Version:	0.9.3
-Release:	1
+Release:	2
 Epoch:		0
 License:	GPL
 Group:		Base
@@ -13,6 +13,7 @@ Source0:	http://dl.sourceforge.net/sysauth-pgsql/pam-pgsql-%{version}.tar.gz
 URL:		http://sysauth-pgsql.sourceforge.net/
 BuildRequires:	pam-devel
 BuildRequires:	postgresql-devel
+BuildRequires:	postgresql-ecpg-devel
 Obsoletes:	pam_pgsql
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

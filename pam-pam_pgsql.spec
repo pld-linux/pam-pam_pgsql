@@ -1,4 +1,4 @@
-# $Revision: 1.8 $Date: 2004-12-29 13:19:20 $
+# $Revision: 1.9 $Date: 2004-12-29 18:30:35 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
@@ -12,6 +12,9 @@ Source0:	http://dl.sourceforge.net/sysauth-pgsql/pam-pgsql-%{version}.tar.gz
 # Source0-md5:	6d91662f167c87bf64dd24753181e9e3
 Patch0:		%{name}-include.patch
 URL:		http://sysauth-pgsql.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRequires:	pam-devel
 BuildRequires:	postgresql-devel
 BuildRequires:	postgresql-ecpg-devel
@@ -32,9 +35,11 @@ PAM PgSQL jest modu³em PAM u¿ywaj±cym bazy PostgreSQL.
 rm -f src/acct.c src/auth.c src/chauth.c src/cred.c src/pam_pgsql.c
 
 %build
+%{__libtoolize}
 %{__aclocal}
-%{__automake}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 
 %configure \
 	%{!?debug:--disable-debug} 
@@ -47,7 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_libdir}/pam_pgsql $RPM_BUILD_ROOT%{_libdir}/pam_pgsql.so
 # useless
 rm -f $RPM_BUILD_ROOT%{_libdir}/pam_pgsql.la
 

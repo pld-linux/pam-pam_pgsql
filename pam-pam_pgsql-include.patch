@@ -1,0 +1,15 @@
+diff -urN pam-pgsql-0.9.3.orig/src/pam_pgsql.c pam-pgsql-0.9.3/src/pam_pgsql.c
+--- pam-pgsql-0.9.3.orig/src/pam_pgsql.c	2004-06-15 11:59:08.983467464 +0200
++++ pam-pgsql-0.9.3/src/pam_pgsql.c	2004-06-15 12:00:38.209902984 +0200
+@@ -1,8 +1,8 @@
+ /* Processed by ecpg (2.8.0) */
+ /* These three include files are added by the preprocessor */
+-#include <ecpgtype.h>
+-#include <ecpglib.h>
+-#include <ecpgerrno.h>
++#include <ecpg/ecpgtype.h>
++#include <ecpg/ecpglib.h>
++#include <ecpg/ecpgerrno.h>
+ #line 1 "pam_pgsql.pgc"
+ /* -*-c-*- */
+ 

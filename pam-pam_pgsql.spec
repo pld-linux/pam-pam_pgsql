@@ -1,4 +1,4 @@
-# $Revision: 1.6 $Date: 2004-06-15 10:28:59 $
+# $Revision: 1.7 $Date: 2004-07-29 20:47:35 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
@@ -18,7 +18,7 @@ BuildRequires:	postgresql-ecpg-devel
 Obsoletes:	pam_pgsql
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libdir		/lib/security
+%define		_libdir		/%{_lib}/security
 
 %description
 PAM PgSQL is a PAM module that uses PostgreSQL database.

@@ -1,10 +1,10 @@
-# $Revision: 1.7 $Date: 2004-07-29 20:47:35 $
+# $Revision: 1.8 $Date: 2004-12-29 13:19:20 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
 Name:		pam-%{modulename}
 Version:	0.9.3
-Release:	2.1
+Release:	3
 Epoch:		0
 License:	GPL
 Group:		Base
@@ -29,13 +29,17 @@ PAM PgSQL jest modu³em PAM u¿ywaj±cym bazy PostgreSQL.
 %prep
 %setup -q -n pam-pgsql-%{version}
 %patch0 -p1
-sed -e 's@#include <postgresql/libpq-fe.h>@#include <libpq-fe.h>@' \
-	src/pam_pgsql.h > pam_pgsql.h.tmp
-mv -f pam_pgsql.h.tmp src/pam_pgsql.h
+rm -f src/acct.c src/auth.c src/chauth.c src/cred.c src/pam_pgsql.c
 
 %build
+%{__aclocal}
+%{__automake}
+%{__autoconf}
+
 %configure \
-	%{!?debug:--disable-debug}
+	%{!?debug:--disable-debug} 
+
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,6 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+mv $RPM_BUILD_ROOT%{_libdir}/pam_pgsql $RPM_BUILD_ROOT%{_libdir}/pam_pgsql.so
 # useless
 rm -f $RPM_BUILD_ROOT%{_libdir}/pam_pgsql.la
 

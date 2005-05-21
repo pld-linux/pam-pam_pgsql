@@ -1,10 +1,10 @@
-# $Revision: 1.9 $Date: 2004-12-29 18:30:35 $
+# $Revision: 1.10 $Date: 2005-05-21 17:19:30 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl):	Modu³ PAM PostgreSQL
 Name:		pam-%{modulename}
 Version:	0.9.3
-Release:	3
+Release:	4
 Epoch:		0
 License:	GPL
 Group:		Base

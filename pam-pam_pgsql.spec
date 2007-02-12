@@ -1,7 +1,7 @@
-# $Revision: 1.10 $Date: 2005-05-21 17:19:30 $
+# $Revision: 1.11 $Date: 2007-02-12 00:49:18 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
-Summary(pl):	Modu≥ PAM PostgreSQL
+Summary(pl.UTF-8):   Modu≈Ç PAM PostgreSQL
 Name:		pam-%{modulename}
 Version:	0.9.3
 Release:	4
@@ -26,8 +26,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 PAM PgSQL is a PAM module that uses PostgreSQL database.
 
-%description -l pl
-PAM PgSQL jest modu≥em PAM uøywaj±cym bazy PostgreSQL.
+%description -l pl.UTF-8
+PAM PgSQL jest modu≈Çem PAM u≈ºywajƒÖcym bazy PostgreSQL.
 
 %prep
 %setup -q -n pam-pgsql-%{version}

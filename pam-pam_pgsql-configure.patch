@@ -1,8 +1,0 @@
---- pam-pgsql-0.9.3/configure.in~	2008-02-01 13:46:27.552595537 +0100
-+++ pam-pgsql-0.9.3/configure.in	2008-02-01 13:46:56.180687423 +0100
-@@ -1,4 +1,5 @@
- AC_INIT(src/pam_pgsql.pgc)
-+AC_CONFIG_HEADER(config.h)
- AM_INIT_AUTOMAKE(pam-pgsql, 0.9.3)
- 
- dnl Checks for programs.

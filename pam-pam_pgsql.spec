@@ -1,4 +1,4 @@
-# $Revision: 1.12 $Date: 2007-02-13 07:16:51 $
+# $Revision: 1.13 $Date: 2008-02-01 12:54:04 $
 %define 	modulename pam_pgsql
 Summary:	PostgreSQL PAM Module
 Summary(pl.UTF-8):	Moduł PAM PostgreSQL
@@ -11,6 +11,7 @@ Group:		Base
 Source0:	http://dl.sourceforge.net/sysauth-pgsql/pam-pgsql-%{version}.tar.gz
 # Source0-md5:	6d91662f167c87bf64dd24753181e9e3
 Patch0:		%{name}-include.patch
+Patch1:		%{name}-configure.patch
 URL:		http://sysauth-pgsql.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -32,6 +33,7 @@ PAM PgSQL jest modułem PAM używającym bazy PostgreSQL.
 %prep
 %setup -q -n pam-pgsql-%{version}
 %patch0 -p1
+%patch1 -p1
 rm -f src/acct.c src/auth.c src/chauth.c src/cred.c src/pam_pgsql.c
 
 %build

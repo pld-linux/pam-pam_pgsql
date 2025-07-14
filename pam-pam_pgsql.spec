@@ -30,7 +30,7 @@ PAM PgSQL jest modułem PAM używającym bazy PostgreSQL.
 
 %prep
 %setup -q -n pam-pgsql-%{version}
-%patch0 -p1
+%patch -P0 -p1
 rm -f src/acct.c src/auth.c src/chauth.c src/cred.c src/pam_pgsql.c
 
 %build
